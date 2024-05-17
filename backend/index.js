@@ -29,11 +29,11 @@ dotenv.config({
     //custom middleware
     app.use(cookieParser())
     
-// const corsOptions={
-//     origin: "*",
-//     credentials: true
-// }
-app.use(cors())
+const corsOptions={
+    origin: "*",
+    credentials: true
+}
+app.use(cors(corsOptions))
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
