@@ -6,9 +6,36 @@ import { FaHeart } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import { LuLogOut } from "react-icons/lu";
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
+import { USER_API_ENDPOINT } from '../utils/constants';
+import toast from 'react-hot-toast';
+import { followingUpdate, getMyProfile, getOtherUsers, getUser } from '../redux/userSlice';
 
 function LeftSideBar() {
+    const {user,profile}=useSelector(store=>store.user)
+    const navigate =useNavigate()
+    const dispatch =useDispatch()
+
+    const logoutHandler= async()=>{
+        try {
+            const res =await axios.get(`${USER_API_ENDPOINT}/logout`,{
+                withCredentials:true
+            })
+            dispatch(getUser(null))
+            dispatch(getOtherUsers(null))
+            dispatch(getMyProfile(null))
+            
+            navigate('/login')
+            console.log(res)
+            toast.success(res.data.msg)
+        } catch (error) {
+            toast.error(error.response.data.msg)
+            console.log(error);
+        }
+
+    }
     return (
         <div className='w-[20%]'>
             <div>
@@ -36,7 +63,7 @@ function LeftSideBar() {
                         <h1 className='font-bold text-lg ml-2'> Message</h1>
                     </div>
 
-                    <Link to="/profile" className='flex items-center my-2 px-4 py-2 hover:bg-gray-200 hover:cursor-pointer rounded-full'>
+                    <Link to={`/profile/${user?._id}`} className='flex items-center my-2 px-4 py-2 hover:bg-gray-200 hover:cursor-pointer rounded-full'>
                         <div><FaUser size={"22px"} /></div>
                         <h1 className='font-bold text-lg ml-2'> Profile</h1>
                     </Link>
@@ -46,7 +73,7 @@ function LeftSideBar() {
                         <h1 className='font-bold text-lg ml-2'> Favriote</h1>
                     </div>
 
-                    <div className='flex items-center my-2 px-4 py-2 hover:bg-gray-200 hover:cursor-pointer rounded-full'>
+                    <div onClick={logoutHandler} className='flex items-center my-2 px-4 py-2 hover:bg-gray-200 hover:cursor-pointer rounded-full'>
                         <div><LuLogOut size={"24px"} /></div>
                         <h1 className='font-bold text-lg ml-2'> Logout</h1>
                     </div>
