@@ -30,10 +30,20 @@ dotenv.config({
     app.use(cookieParser())
     
 const corsOptions={
-    origin: "http://localhost:5173",
+    origin: "[http://localhost:5173/]",
     credentials: true
 }
 app.use(cors(corsOptions))
+
+app.options('*', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send('ok');
+  });
+  
+  app.use((req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+  });
+
     //api
 
     app.use("/api/v1/user",userRoute)
