@@ -30,8 +30,9 @@ dotenv.config({
     app.use(cookieParser())
     
 const corsOptions={
-    origin: "*",
-    credentials: true
+    origin: "http://localhost:5173/",
+    credentials: true,
+    optionSuccessStatus:200
 }
 app.use(cors(corsOptions))
 
