@@ -13,7 +13,7 @@ import cors from 'cors'
 const app=express()
 
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://twitter-clone-i3y3-k5uejr0za-krishnaalaspures-projects.vercel.app/");
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
     res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     next();
@@ -36,7 +36,7 @@ dotenv.config({
     app.use(cookieParser())
     
 const corsOptions={
-    origin: ["https://twitter-clone-i3y3.vercel.apphttps://twitter-clone-i3y3-k5uejr0za-krishnaalaspures-projects.vercel.app"] ,
+    origin: ["http://localhost:5173"] ,
     credentials: true,
     optionSuccessStatus:200
 }
