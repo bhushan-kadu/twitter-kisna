@@ -9,7 +9,10 @@ import cors from "cors";
 // const dotenv = require('dotenv');
 // const {databaseConnection} = require('../config/db.js');
 
+export const maxDuration = 60;
+
 const app = express();
+
 
 dotenv.config({
   path: ".env",
