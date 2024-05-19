@@ -1,6 +1,6 @@
 import express from 'express'
-import { Login, Logout, Register, bookmarks, follow, getMyProfile, getOtherUsers, unfollow } from '../controllers/userController.js';
-import isAuthenticated from '../config/auth.js';
+import { Login, Logout, Register, bookmarks, follow, getMyProfile, getOtherUsers, unfollow } from '../api/controllers/userController.js';
+import isAuthenticated from '../api/config/auth.js';
 
 const router=express.Router();
 

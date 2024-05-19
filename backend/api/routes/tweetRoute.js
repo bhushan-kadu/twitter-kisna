@@ -1,6 +1,6 @@
 import express from 'express'
-import { createTweet, deleteTweet, getAllFollowingTweets, getAllTweets, likeOrDislike } from '../controllers/tweetController.js';
-import isAuthenticated from '../config/auth.js';
+import { createTweet, deleteTweet, getAllFollowingTweets, getAllTweets, likeOrDislike } from '../api/controllers/tweetController.js';
+import isAuthenticated from '../api/config/auth.js';
 
 const router=express.Router();
 
