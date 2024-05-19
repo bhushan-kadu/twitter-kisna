@@ -40,6 +40,11 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
+function errorHandler(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).json({ err });
+}
+
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
   res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE ,OPTIONS ");
@@ -56,7 +61,7 @@ app.get("/", (req, res) => {
     msg: "coming from backend",
   });
 });
-
+app.use(errorHandler);
 app.listen(process.env.PORT, () => {
   console.log(`Server is listening on Port ${process.env.PORT}`);
   console.log(`http://localhost:4000`);
