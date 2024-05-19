@@ -1,4 +1,4 @@
-// export const maxDuration = 60;
+
 import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
@@ -9,7 +9,7 @@ import cors from "cors";
 // const express = require('express');
 // const dotenv = require('dotenv');
 // const {databaseConnection} = require('../config/db.js');
-
+export const maxDuration = 60;
 
 
 const app = express();
