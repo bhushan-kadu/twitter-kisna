@@ -53,6 +53,7 @@ app.use((req, res, next) => {
 });
 
 //api
+app.use(errorHandler);
 
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/tweet", tweetRoute);
@@ -61,7 +62,7 @@ app.get("/", (req, res) => {
     msg: "coming from backend",
   });
 });
-app.use(errorHandler);
+
 app.listen(process.env.PORT, () => {
   console.log(`Server is listening on Port ${process.env.PORT}`);
   console.log(`http://localhost:4000`);
