@@ -5,5 +5,6 @@
       "maxDuration": 60
     }
   },
-  "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
+  "routes":[{"src":"/(.*)","dest":"/api"}]
+
 }
