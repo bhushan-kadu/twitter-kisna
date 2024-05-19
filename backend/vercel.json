@@ -3,7 +3,7 @@
     "builds":[{"src":"./index.js","use":"@vercel/node"}],
     "routes":[{"src":"/(.*)","dest":"/"}],
     "functions": {
-        "api/v1/tweet/index.js": {
+        "api/**/*.ts": {
           "maxDuration": 60
         }
       }
