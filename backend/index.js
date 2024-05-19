@@ -61,3 +61,5 @@ app.listen(process.env.PORT, () => {
   console.log(`Server is listening on Port ${process.env.PORT}`);
   console.log(`http://localhost:4000`);
 });
+
+export default app;
