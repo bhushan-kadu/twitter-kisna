@@ -62,4 +62,4 @@ app.listen(process.env.PORT, () => {
   console.log(`http://localhost:4000`);
 });
 
-module.exports = app;
+export default app;
