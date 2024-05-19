@@ -1,4 +1,4 @@
-export const maxDuration = 60;
+// export const maxDuration = 60;
 import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
