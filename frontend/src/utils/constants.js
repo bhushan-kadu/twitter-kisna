@@ -1,8 +1,8 @@
-//export const USER_API_ENDPOINT="http://localhost:4000/api/v1/user"
-//export const TWEET_API_ENDPOINT="http://localhost:4000/api/v1/tweet"
+// export const USER_API_ENDPOINT="http://localhost:4000/api/v1/user"
+// export const TWEET_API_ENDPOINT="http://localhost:4000/api/v1/tweet"
 
-export const USER_API_ENDPOINT="https://twitter-clone-theta-blond.vercel.app/api/v1/user"
-export const TWEET_API_ENDPOINT="https://twitter-clone-theta-blond.vercel.app/api/v1/tweet"
+export const USER_API_ENDPOINT="https://twitter-kisna-git-main-bhushans-projects-6084d2a3.vercel.app/api/v1/user"
+export const TWEET_API_ENDPOINT="https://twitter-kisna-git-main-bhushans-projects-6084d2a3.vercel.app/api/v1/tweet"
 
 
 export const timeSince = (timestamp) => {
